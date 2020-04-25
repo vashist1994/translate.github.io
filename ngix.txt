@@ -1,0 +1,13 @@
+server {
+       listen 81;
+       listen [::]:81;
+
+       server_name example.ubuntu.com;
+
+       root /home/vashist/English-Marathi translation/dist;
+       index translate.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Neural-Machine-Translate-ENG-MARAT</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+    <div class="navbar-fixed">
+        <nav class=" grey darken-3">
+            <div class="nav-wrapper container">
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" class="brand-logo">NMT</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Performance">Performance</a></li>
+                    <li><a href="#Improvements">Improvements</a></li>
+                    <li><a href="#Demo">Demo</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-nav">
+                    <li>
+                        <h3 class="red-text center-align">NMT</h3>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Performance">Performance</a></li>
+                    <li><a href="#Improvements">Improvements</a></li>
+                    <li><a href="#Demo">Demo</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <section id="welcome" class="banner row">
+            <div id="wrap", class="landing-div">
+                <h1 class="col s12 center-align">Neural Machine Translation <p>ENGLISH-MARATHI<p></h1>
+        </section>
+
+        <section id="about" class="row center-align red lighten-1 white-text">
+            <div class="row">
+                <h3>Neural Machine Translation</h3>
+            </div>
+            <div class="container-fluid text-center">
+                <p>
+                    Machine Translation is an application of NLP 
+                    where one Language is translated into another language. 
+                    Example translating Spanish to English. Machine Translation 
+                    using Neural networks especially Recurrent models, is called 
+                    Neural Machine Translation or in short NMT.
+                    Most widely used Deep Learning model for NMT is seq2seq model 
+                    which has Encoder and Decoder. At a high-level Encoder takes 
+                    input sentence and Decoder outputs translated target sentence. 
+                    Both Encoder and Decoder models are build using LSTM, RNN, GRU layers etc.
+                </p>                
+                <p>
+                    This is the simple NMT which translate from English language to Marathi langage.
+                    the Dataset include a total of 38696 sentances of english and there 
+                    respective marathi sentances you can find the data from <a href="http://www.manythings.org/anki/">here</a>
+                    the data is then cleaned and and stored as pandas dataframe with 2 columns English and Marathi.
+                    After this it is splitted into 90% to 10%.
+                </p>
+                <p>
+                    I have trained a Seq2Seq model without attention. 
+                    The LSTM(Long term short term memory) encoder and decoder is 
+                    trained for 30 epochs on 34825 data.
+               </p>
+            </div>
+        </section>
+
+        <section id="Performance" class="row center-align">
+            <div class="row">
+                <h3>Model Performance</h3>
+            </div>
+            <div class="container-fluid text-center">
+                <p>
+                    Model performance is good compared to the number data it has trained.
+                    it perform good on short sentances having 4-5 words but not that good for 
+                    longer sentances as we already know the seq2seq model doesnot perform well 
+                    on lengthy sentance which is one of its disadvantages. Also it has problem
+                    in decoding the sequence involve name because the only name in the dataset 
+                    used is 'Tom', so it decode this name easily but if you give it sentance consisting
+                    name other than 'Tom' like 'My name is sam' it not able to decode for name 'sam'
+                    and produces something like 'माझं नाव आहे'.
+                </p>
+            </div>
+        </section>
+
+        <section id="Improvements" class="row center-align red lighten-1 white-text">
+            <div class="row">
+                <h3>Improvements</h3>
+            </div>
+            <div class="container-fluid">
+                <p>
+                    Following are some changes can be done to Improve this Translator
+                <p>
+                <ul class="">
+                    <li class="" style='list-style:inside'>It can be train on more versatile data with lots of variation in it.</li>
+                    <li class="" style='list-style:inside'>For lengthy Sentance limitation of it we can include the Attention Machanism </li>
+                    <li class="" style='list-style:inside'>We can try replacing GRU with LSTM and check the performance of the model</li>
+                </ul>
+                
+                <p>
+                  The above points were some of few Improvement which I can suggest. 
+                  But we know that there is no end if Improvements things keeps Improving as time progresses. Hence the
+                  Improvment of this NMT is not limited to above points. 
+                </p>
+            </div>
+        </section>
+
+
+        <section id="Demo">
+            <div class="row">
+                <h3 class="col s12 center-align ">English to Marathi Translator</h3>
+            </div>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="row">
+                        <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+                            <!--<i class="material-icons prefix">account_circle</i>-->
+                            <input id="fullName" type="text" name="english-text" class="validate">
+                            <label for="fullName">English Sentance</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+                            <!--<i class="material-icons prefix">email</i>-->
+                            <input id="marathi" type="text" class="validate"  disabled>
+                            <label for="marathi">Marathi Sentance</label>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <textarea id="message" class="materialize-textarea"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>-->
+                    <div class="row col s12 center-align">
+                        <button  class="request waves-effect waves-teal btn-flat">Translate<i class="material-icons right">send</i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small" style="background:#ef5350;">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"style="background:#ef5350; color:black">© 2020 Copyright:
+    </div>
+    <!-- Copyright -->
+
+    </footer>
+<!-- Footer -->
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

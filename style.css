@@ -1,0 +1,63 @@
+#welcome{
+    height:100vh;
+    background-image: url("banner.jpg");
+    background-size: cover;
+    background-position: top;
+} 
+#welcome h1{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    padding: 20px;
+
+}
+
+
+#sidenav-overlay{
+    z-index: 0;
+}
+
+.landing-div {
+    width: 100%;
+}
+#wrap{
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+#welcome.row{
+    margin-bottom:0;
+}
+#about, #Improvements,#Demo {
+    padding:60px 0;
+    margin-bottom: 0;
+    
+}
+
+h3{
+    font-weight: 300;
+}
+#Performance{
+    background-color:#f5f5f5;
+    padding: 60px 0;
+    margin-bottom: 0;
+}
+#Performance h3{
+    margin-top:0;
+    padding-top:30px;
+    /* margin-bottom: 50px; */
+    text-align:center;
+}
+
+#Performance .card{
+    margin-left:20px;
+    margin-right: 20px;
+    margin-top:30px;
+    margin-bottom:30px;
+}
