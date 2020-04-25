@@ -31,8 +31,8 @@ $( document ).ready(function(){
 
         success: function(result)
         { 
-          console.log("response:"+result)
-          $("#marathi").val(result);
+          console.log("response:"+JSON.stringify(result))
+          $("#marathi").val(JSON.stringify(result));
       },
       error: function(err)
       {
