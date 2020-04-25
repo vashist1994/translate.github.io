@@ -32,7 +32,7 @@ $( document ).ready(function(){
         success: function(result)
         { 
           console.log("response:"+JSON.stringify(result))
-          $("#marathi").val(JSON.stringify(result['Translated_text']));
+          $("#marathi").val(JSON.stringify(result['Translated_text'])).css("color","black");
       },
       error: function(err)
       {
