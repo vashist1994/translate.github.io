@@ -23,7 +23,7 @@ $( document ).ready(function(){
       console.log("input query data:"+ input_query)
       $.ajax({
         type:'GET',
-        url: "http://127.0.0.1:5000/", 
+        url: "http://127.0.0.1:5000/api", 
         dataType: 'json',
         data: {'query': input_query},
         crossDomain : true,
