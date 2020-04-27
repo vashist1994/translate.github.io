@@ -21,24 +21,15 @@ $( document ).ready(function(){
     $(".request").click(function(){
       var input_query = $("#fullName").val()
       console.log("input query data:"+ input_query)
-      $.ajax({
-        type:'GET',
-        url: "http://127.0.0.1:5000/api", 
-        dataType: 'json',
-        data: {'query': input_query},
-        crossDomain : true,
-        // header:"Access-Control-Allow-Origin: http://127.0.0.1:5000/",
-
-        success: function(result)
-        { 
-          console.log("response:"+JSON.stringify(result))
-          $("#marathi").val(JSON.stringify(result['Translated_text'])).css("color","black");
-      },
-      error: function(err)
-      {
-        console.log("error message:"+JSON.stringify(err))
-      }
-    });
-      
+      var settings = {
+        "url": "http://localhost:5000/"+input_query,
+        "method": "GET",
+        "timeout": 0,
+      };
+      $.ajax(settings).done(function (response) {
+        $("#marathi").val(JSON.stringify(response['Marathi Sentance'])).css("color","black")
+        console.log(JSON.stringify(response));
+      });
+          
     });
 });
