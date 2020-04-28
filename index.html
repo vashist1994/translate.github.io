@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Neural-Machine-Translate-ENG-MARAT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'><link rel="stylesheet" href="./style.css">
 
@@ -121,7 +122,7 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
                             <!--<i class="material-icons prefix">account_circle</i>-->
-                            <input id="fullName" type="text" name="english-text" class="validate">
+                            <input id="fullName" type="text" name="english-text" class="validate" required>
                             <label for="fullName">English Sentance</label>
                         </div>
                     </div>
@@ -145,7 +146,21 @@
                     </div>-->
                     <div class="row col s12 center-align">
                         <button  class="request waves-effect waves-teal btn-flat">Translate<i class="material-icons right">send</i></button>
+                        <div class="preloader-wrapper small active spin-loader" >
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -164,7 +179,9 @@
 </body>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script  src="./script.js"></script>
 
 </body>
 </html>

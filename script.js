@@ -19,17 +19,35 @@ $( document ).ready(function(){
 
 
     $(".request").click(function(){
-      var input_query = $("#fullName").val()
-      console.log("input query data:"+ input_query)
-      var settings = {
-        "url": "http://localhost:5000/"+input_query,
-        "method": "GET",
-        "timeout": 0,
-      };
-      $.ajax(settings).done(function (response) {
-        $("#marathi").val(JSON.stringify(response['Marathi Sentance'])).css("color","black")
-        console.log(JSON.stringify(response));
-      });
-          
+      // input_value = $("fullName").val()
+      if($.trim($('#fullName').val()) == ''){
+        var toastHTML = '<span class="toast-span">Enter the sentance</span>';
+        M.toast({html: toastHTML,displayLength:1500});
+      }
+      else {
+        var input_query = $("#fullName").val()
+        console.log("input query data:"+ input_query)
+        $(".request").css("display","none")
+        $(".spin-loader").css('display','inline-block')
+        $("#marathi").val('')
+        var settings = {
+          "url": "https://eng-mar-translate.herokuapp.com/"+input_query,
+          "method": "GET",
+          "timeout": 0,
+        };
+        $.ajax(settings).done(function (response) {
+          $(".spin-loader").css('display','none')
+          $(".request").css("display","initial")
+          $("#marathi").val(JSON.stringify(response['Marathi Sentance'])).css("color","black")
+          console.log(JSON.stringify(response));
+        }).fail(function(response){
+          $("#marathi").val(JSON.stringify(response['Marathi Sentance'])).css("color","black")
+          $(".spin-loader").css('display','none')
+          $(".request").css("display","initial")
+          // M.toast({html: 'I am a toast!'})
+  
+        });
+
+      }    
     });
 });
